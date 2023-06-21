@@ -10,52 +10,52 @@ import { Component } from "react";
 
 export default class TodoList extends Component {
 
-     changeclass(e) {
+  changeclass(e) {
 
-        if (document.getElementById(e).classList.contains('is-done')) {
+    if (document.getElementById(e).classList.contains('is-done')) {
 
-          document.getElementById(e).classList.remove('is-done');
+      document.getElementById(e).classList.remove('is-done');
 
-        } else {
+    } else {
 
-          document.getElementById(e).classList.add('is-done');
+      document.getElementById(e).classList.add('is-done');
 
-        }
+    }
 
-      }
-
-
+  }
 
 
-     add() {
 
-        var ul = document.getElementById('tasks');
 
-        var li = document.createElement('li');
+  add() {
 
-      
+    var ul = document.getElementById('tasks');
 
-        var nextid = document.querySelectorAll('ul li').length + 1;
+    var li = document.createElement('li');
 
-      
 
-        if (document.getElementById('item').value.length > 0) {
 
-          li.appendChild(
+    var nextid = document.querySelectorAll('ul li').length + 1;
 
-            document.createTextNode(document.getElementById('item').value)
 
-          );
 
-          li.setAttribute('id', nextid);
+    if (document.getElementById('item').value.length > 0) {
 
-          li.setAttribute('onclick', 'changeclass(' + nextid + ')');
+      li.appendChild(
 
-          ul.appendChild(li);
+        document.createTextNode(document.getElementById('item').value)
 
-        }
+      );
 
-      }
+      li.setAttribute('id', nextid);
+
+      li.setAttribute('onclick', 'changeclass(' + nextid + ')');
+
+      ul.appendChild(li);
+
+    }
+
+  }
 
 
 
@@ -72,7 +72,7 @@ export default class TodoList extends Component {
 
           <input type="text" id="item" name="item" />
 
-           
+
 
           <button onClick={this.add}>Add</button>
 
@@ -100,4 +100,3 @@ export default class TodoList extends Component {
   }
 
 }
-  
